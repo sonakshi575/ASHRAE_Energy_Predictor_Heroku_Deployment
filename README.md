@@ -2,7 +2,7 @@
 
 Steps to run the app locally
 
--Create Virtual Environment 
+- Create Virtual Environment 
  1.virtualenv <environment_name>
  2.<environment_name>\Scripts\activate
  
