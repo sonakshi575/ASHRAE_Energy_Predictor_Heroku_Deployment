@@ -13,3 +13,5 @@ Steps to run the app locally
  1. python app.py
  
  
+For deployment on Heroku
+https://medium.com/@austinlasseter/how-to-deploy-a-simple-plotly-dash-app-to-heroku-622a2216eb73
