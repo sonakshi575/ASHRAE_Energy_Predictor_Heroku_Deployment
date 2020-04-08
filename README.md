@@ -1,7 +1,7 @@
 # ASHRAE_Energy_Predictor_Heroku_Deployment
 
+Steps to run the app locally
 
-#Steps to run the app locally
 -Create Virtual Environment 
  1.virtualenv <environment_name>
  2.<environment_name>\Scripts\activate
