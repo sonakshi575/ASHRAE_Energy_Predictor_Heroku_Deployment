@@ -99,10 +99,22 @@ def build_tab_2():
                             dcc.Dropdown(
                                 id='demo-dropdown',
                                 options=[
+                                    {'label': 'Building 0', 'value': 'SiteID_0'},
                                     {'label': 'Building 1', 'value': 'SiteID_1'},
                                     {'label': 'Building 2', 'value': 'SiteID_2'},
                                     {'label': 'Building 3', 'value': 'SiteID_3'},
                                     {'label': 'Building 4', 'value': 'SiteID_4'},
+                                    {'label': 'Building 5', 'value': 'SiteID_5'},
+                                    {'label': 'Building 6', 'value': 'SiteID_6'},
+                                    {'label': 'Building 7', 'value': 'SiteID_7'},
+                                    {'label': 'Building 8', 'value': 'SiteID_8'},
+                                    {'label': 'Building 9', 'value': 'SiteID_9'},
+                                    {'label': 'Building 10', 'value': 'SiteID_10'},
+                                    {'label': 'Building 11', 'value': 'SiteID_11'},
+                                    {'label': 'Building 12', 'value': 'SiteID_12'},
+                                    {'label': 'Building 13', 'value': 'SiteID_13'},
+                                    {'label': 'Building 14', 'value': 'SiteID_14'},
+                                    {'label': 'Building 15', 'value': 'SiteID_15'},
                                 ],
                                 
                                 style={'width': '95%', 'textAlign': 'start','color':"#1e2130", "paddingLeft":20}
@@ -323,7 +335,7 @@ app.layout = html.Div(
     dash.dependencies.State('meter-type', 'value'),]
 )
 def graph_display(demo_dropdown,meter_type,a,b):
-    if (demo_dropdown == "SiteID_1" and meter_type == "All" ):
+    if (demo_dropdown == "SiteID_0" and meter_type == "All" ):
         return (
                 html.Div(
                 id="top-section-container",
@@ -334,7 +346,80 @@ def graph_display(demo_dropdown,meter_type,a,b):
                             [html.H2("ENERGY CONSUMPTION", className="graph__title")]
                         ),
                         html.Br(),
-                        html.Img(src = app.get_asset_url ('test.png'), height=460,width=1200),
+                        html.Img(src = app.get_asset_url ('Split_ID_0_All.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_0" and meter_type == "Hot Water" ):
+        return(
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_0_Hotwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_0" and meter_type == "Chilled Water" ):
+        return (html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_0_Chilledwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_0" and meter_type == "Steam" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_0_Steam.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_0" and meter_type == "Electricity" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_0_Electric.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+
+    elif (demo_dropdown == "SiteID_1" and meter_type == "All" ):
+        return (
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_1_All.png'), height=460,width=1200),
                         ])
                     ],
             ))
@@ -349,10 +434,1076 @@ def graph_display(demo_dropdown,meter_type,a,b):
                             [html.H2("ENERGY CONSUMPTION", className="graph__title")]
                         ),
                         html.Br(),
-                        html.Img(src = app.get_asset_url ('site15_hotwater.png'), height=460,width=1200),
+                        html.Img(src = app.get_asset_url ('Split_ID_1_Hotwater.png'), height=460,width=1200),
                         ])
                     ],
             ))
+    elif (demo_dropdown == "SiteID_1" and meter_type == "Chilled Water" ):
+        return (html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_1_Chilledwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_1" and meter_type == "Steam" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_1_Steam.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_1" and meter_type == "Electricity" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_1_Electric.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+
+    
+    elif (demo_dropdown == "SiteID_2" and meter_type == "All" ):
+        return (
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_2_All.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_2" and meter_type == "Hot Water" ):
+        return(
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_2_Hotwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_2" and meter_type == "Chilled Water" ):
+        return (html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_2_Chilledwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_2" and meter_type == "Steam" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_2_Steam.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_2" and meter_type == "Electricity" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_2_Electric.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+
+    elif (demo_dropdown == "SiteID_3" and meter_type == "All" ):
+            return (
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_3_All.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_3" and meter_type == "Hot Water" ):
+        return(
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_3_Hotwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_3" and meter_type == "Chilled Water" ):
+        return (html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_3_Chilledwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_3" and meter_type == "Steam" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_3_Steam.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_3" and meter_type == "Electricity" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_3_Electric.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_4" and meter_type == "All" ):
+            return (
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_4_All.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_4" and meter_type == "Hot Water" ):
+        return(
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_4_Hotwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_4" and meter_type == "Chilled Water" ):
+        return (html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_4_Chilledwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_4" and meter_type == "Steam" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_4_Steam.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_4" and meter_type == "Electricity" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_4_Electric.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_5" and meter_type == "All" ):
+            return (
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_5_All.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+        
+    elif (demo_dropdown == "SiteID_5" and meter_type == "Hot Water" ):
+            return(
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_5_Hotwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_5" and meter_type == "Chilled Water" ):
+        return (html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_5_Chilledwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_5" and meter_type == "Steam" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_5_Steam.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_5" and meter_type == "Electricity" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_5_Electric.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_6" and meter_type == "All" ):
+            return (
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_6_All.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+        
+    elif (demo_dropdown == "SiteID_6" and meter_type == "Hot Water" ):
+            return(
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_6_Hotwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_6" and meter_type == "Chilled Water" ):
+        return (html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_6_Chilledwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_6" and meter_type == "Steam" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_6_Steam.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_6" and meter_type == "Electricity" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_6_Electric.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_7" and meter_type == "All" ):
+            return (
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_7_All.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+        
+    elif (demo_dropdown == "SiteID_7" and meter_type == "Hot Water" ):
+            return(
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_7_Hotwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_7" and meter_type == "Chilled Water" ):
+        return (html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_7_Chilledwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_7" and meter_type == "Steam" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_7_Steam.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_7" and meter_type == "Electricity" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_7_Electric.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_8" and meter_type == "All" ):
+                return (
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_8_All.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+        
+    elif (demo_dropdown == "SiteID_8" and meter_type == "Hot Water" ):
+            return(
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_8_Hotwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_8" and meter_type == "Chilled Water" ):
+        return (html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_8_Chilledwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_8" and meter_type == "Steam" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_8_Steam.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_8" and meter_type == "Electricity" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_8_Electric.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_9" and meter_type == "All" ):
+            return (
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_9_All.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+        
+    elif (demo_dropdown == "SiteID_9" and meter_type == "Hot Water" ):
+            return(
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_9_Hotwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_9" and meter_type == "Chilled Water" ):
+        return (html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_9_Chilledwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_9" and meter_type == "Steam" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_9_Steam.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_9" and meter_type == "Electricity" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_9_Electric.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_10" and meter_type == "All" ):
+            return (
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_10_All.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+        
+    elif (demo_dropdown == "SiteID_10" and meter_type == "Hot Water" ):
+            return(
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_10_Hotwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_10" and meter_type == "Chilled Water" ):
+        return (html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_10_Chilledwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_10" and meter_type == "Steam" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_10_Steam.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_10" and meter_type == "Electricity" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_10_Electric.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_11" and meter_type == "All" ):
+            return (
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_11_All.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+        
+    elif (demo_dropdown == "SiteID_11" and meter_type == "Hot Water" ):
+            return(
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_11_Hotwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_11" and meter_type == "Chilled Water" ):
+        return (html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_11_Chilledwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_11" and meter_type == "Steam" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_11_Steam.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_11" and meter_type == "Electricity" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_11_Electric.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_12" and meter_type == "All" ):
+            return (
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_12_All.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+        
+    elif (demo_dropdown == "SiteID_12" and meter_type == "Hot Water" ):
+            return(
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_12_Hotwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_12" and meter_type == "Chilled Water" ):
+        return (html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_12_Chilledwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_12" and meter_type == "Steam" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_12_Steam.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_12" and meter_type == "Electricity" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_12_Electric.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_13" and meter_type == "All" ):
+            return (
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_13_All.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+        
+    elif (demo_dropdown == "SiteID_13" and meter_type == "Hot Water" ):
+            return(
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_13_Hotwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_13" and meter_type == "Chilled Water" ):
+        return (html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_13_Chilledwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_13" and meter_type == "Steam" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_13_Steam.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_13" and meter_type == "Electricity" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_13_Electric.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_14" and meter_type == "All" ):
+            return (
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_14_All.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+        
+    elif (demo_dropdown == "SiteID_14" and meter_type == "Hot Water" ):
+            return(
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_14_Hotwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_14" and meter_type == "Chilled Water" ):
+        return (html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_14_Chilledwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_14" and meter_type == "Steam" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_14_Steam.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_14" and meter_type == "Electricity" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_14_Electric.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_15" and meter_type == "All" ):
+            return (
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_15_All.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+        
+    elif (demo_dropdown == "SiteID_15" and meter_type == "Hot Water" ):
+            return(
+                html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_15_Hotwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_15" and meter_type == "Chilled Water" ):
+        return (html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_15_Chilledwater.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_15" and meter_type == "Steam" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_15_Steam.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+    elif (demo_dropdown == "SiteID_15" and meter_type == "Electricity" ):
+        return(html.Div(
+                id="top-section-container",
+                className="wind__speed__container",
+                children=[
+                    html.Div([
+                        html.Div(
+                            [html.H2("ENERGY CONSUMPTION", className="graph__title")]
+                        ),
+                        html.Br(),
+                        html.Img(src = app.get_asset_url ('Split_ID_15_Electric.png'), height=460,width=1200),
+                        ])
+                    ],
+            ))
+
+    
     else:
         return ()
 if __name__ == '__main__':
