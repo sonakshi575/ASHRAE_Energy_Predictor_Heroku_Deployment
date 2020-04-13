@@ -15,3 +15,8 @@ Steps to run the app locally
  
 For deployment on Heroku
 https://medium.com/@austinlasseter/how-to-deploy-a-simple-plotly-dash-app-to-heroku-622a2216eb73
+
+
+Access the build app:
+https://ashrae.herokuapp.com/
+
