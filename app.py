@@ -99,22 +99,22 @@ def build_tab_2():
                             dcc.Dropdown(
                                 id='demo-dropdown',
                                 options=[
-                                    {'label': 'Building 0', 'value': 'SiteID_0'},
-                                    {'label': 'Building 1', 'value': 'SiteID_1'},
-                                    {'label': 'Building 2', 'value': 'SiteID_2'},
-                                    {'label': 'Building 3', 'value': 'SiteID_3'},
-                                    {'label': 'Building 4', 'value': 'SiteID_4'},
-                                    {'label': 'Building 5', 'value': 'SiteID_5'},
-                                    {'label': 'Building 6', 'value': 'SiteID_6'},
-                                    {'label': 'Building 7', 'value': 'SiteID_7'},
-                                    {'label': 'Building 8', 'value': 'SiteID_8'},
-                                    {'label': 'Building 9', 'value': 'SiteID_9'},
-                                    {'label': 'Building 10', 'value': 'SiteID_10'},
-                                    {'label': 'Building 11', 'value': 'SiteID_11'},
-                                    {'label': 'Building 12', 'value': 'SiteID_12'},
-                                    {'label': 'Building 13', 'value': 'SiteID_13'},
-                                    {'label': 'Building 14', 'value': 'SiteID_14'},
-                                    {'label': 'Building 15', 'value': 'SiteID_15'},
+                                    {'label': 'Site 0', 'value': 'SiteID_0'},
+                                    {'label': 'Site 1', 'value': 'SiteID_1'},
+                                    {'label': 'Site 2', 'value': 'SiteID_2'},
+                                    {'label': 'Site 3', 'value': 'SiteID_3'},
+                                    {'label': 'Site 4', 'value': 'SiteID_4'},
+                                    {'label': 'Site 5', 'value': 'SiteID_5'},
+                                    {'label': 'Site 6', 'value': 'SiteID_6'},
+                                    {'label': 'Site 7', 'value': 'SiteID_7'},
+                                    {'label': 'Site 8', 'value': 'SiteID_8'},
+                                    {'label': 'Site 9', 'value': 'SiteID_9'},
+                                    {'label': 'Site 10', 'value': 'SiteID_10'},
+                                    {'label': 'Site 11', 'value': 'SiteID_11'},
+                                    {'label': 'Site 12', 'value': 'SiteID_12'},
+                                    {'label': 'Site 13', 'value': 'SiteID_13'},
+                                    {'label': 'Site 14', 'value': 'SiteID_14'},
+                                    {'label': 'Site 15', 'value': 'SiteID_15'},
                                 ],
                                 
                                 style={'width': '95%', 'textAlign': 'start','color':"#1e2130", "paddingLeft":20}
@@ -171,7 +171,7 @@ def build_tab_1():
                                         id="company-name",
                                         type="text",
                                         placeholder="name",
-                                        style={"color": '#FFFFFF','textAlign': 'left'}
+                                        style={"color": '#1e2130','textAlign': 'left'}
 
                                     )
                         ],
@@ -186,12 +186,23 @@ def build_tab_1():
                                 id='demo-dropdown',
                                 options=[
                                     {'label': 'Education', 'value': 'Education'},
-                                    {'label': 'Engineering', 'value': 'SiteID_2'},
-                                    {'label': 'Building 3', 'value': 'SiteID_3'},
-                                    {'label': 'Building 4', 'value': 'SiteID_4'},
+                                    {'label': 'Lodging/residential', 'value': 'Lodging/residential'},
+                                    {'label': 'Office', 'value': 'Office'},
+                                    {'label': 'Entertainment/public assembly', 'value': 'Entertainment/public assembly'},
+                                    {'label': 'Retail', 'value': 'Retail'},
+                                    {'label': 'Parking', 'value': 'Parking'},
+                                    {'label': 'Public services', 'value': 'Public services'},
+                                    {'label': 'Warehouse/storage', 'value': 'Warehouse/storage'},
+                                    {'label': 'Food sales and service', 'value': 'Food sales and service'},
+                                    {'label': 'Religious worship', 'value': 'Religious worship'},
+                                    {'label': 'Healthcare', 'value': 'Healthcare'},
+                                    {'label': 'Utility', 'value': 'Utility'},
+                                    {'label': 'Technology/Science', 'value': 'Technology/Science'},
+                                    {'label': 'Manufacturing/industrial', 'value': 'Manufacturing/industrial'},
+                                    {'label': 'Services', 'value': 'Services'},
                                 ],
                                 
-                                style={'width': '95%', 'textAlign': 'left','color':"#1e2130", "width":200}
+                                style={'textAlign': 'left','color':"#1e2130", "width":200}
                             ),
                         ],
                     ),
@@ -225,13 +236,13 @@ def build_tab_1():
                         id="utility-card1",
                         children=[
                             #html.P("Convert",style={"color": '#FFFFFF','textAlign': 'left'}),
-                            html.Button("Go",id="button",n_clicks=0,style={'width': '16.5%', 'textAlign': 'center',"color": '#FFFFFF', "backgroundColor":"#E74C3C"})]
+                            html.Button("Go",n_clicks=0,id="button",style={'width': '16.5%', 'textAlign': 'center',"color": '#FFFFFF', "backgroundColor":"#E74C3C"})]
                         #, style={'width': '90%', 'textAlign': 'center'}
                     ),
                     html.Br(),
                     html.Div(
-                        id="card-5 P",
-                        children=[html.P(id="currency_converted",style={"color": '#FFFFFF','textAlign': 'left'})]
+                        id="card-5",style={"color": '#FFFFFF','textAlign': 'left', 'bottomPadding':10}
+                        
                         #html.H2(id="total-rides-selection"),
                         #html.H1(id="date-value"),],style={"text-align": "center",'padding': 40,'color':app_colors['text']}
                     )
@@ -240,6 +251,18 @@ def build_tab_1():
         ],
     )
 
+@app.callback(
+    dash.dependencies.Output("card-5", "children"),
+    [dash.dependencies.Input('button', 'n_clicks')],
+    [dash.dependencies.State('company-name', 'value'),
+    dash.dependencies.State('demo-dropdown', 'value'),
+    dash.dependencies.State('square-feet', 'value'),
+    dash.dependencies.State('floor-count', 'value'),]
+)
+def register_display(button,a,b,c,d):
+    if button >0:
+        return (html.Div(
+            html.P('You have Registered successfully.We will be contacting you for further details')))
 
 
 @app.callback(
